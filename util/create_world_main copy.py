@@ -396,6 +396,39 @@ r_career_office_ds.save()
 r_career_hall.save()
 
 
+r_path_housing.save()
+r_garden.save()
+r_rec_fields.save()
+
+r_housing_square.save()
+r_housing_student.save()
+r_housing_staff.save()
+r_housing_admin.save()
+
+r_housing_student_lounge.save()
+r_housing_student_kitchen.save()
+r_housing_student_hall.save()
+r_housing_student_alpha.save()
+r_housing_student_beta.save()
+r_housing_student_charlie.save()
+
+r_housing_staff_lounge.save()
+r_housing_staff_kitchen.save()
+r_housing_staff_hall.save()
+r_housing_staff_alpha.save()
+r_housing_staff_beta.save()
+r_housing_staff_charlie.save()
+
+r_housing_admin_lounge.save()
+r_housing_admin_kitchen.save()
+r_housing_admin_hall.save()
+r_housing_admin_alpha.save()
+r_housing_admin_beta.save()
+r_housing_admin_charlie.save()
+
+
+
+
 
 
 

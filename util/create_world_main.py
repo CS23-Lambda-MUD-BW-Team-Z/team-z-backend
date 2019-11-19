@@ -6,7 +6,7 @@ Room.objects.all().delete()
 
 
 
-# main line
+# courtyards and such
 
 r_campus_welcome_center = Room(title="Lambda Welcome Center",
 description="""The Lambda School journey begins here""")
@@ -26,7 +26,20 @@ description="""The East end of Lambda's massive courtyard""")
 r_campus_courtyard_west = Room(title="Campus Courtyard West",
 description="""The West end of Lambda's massive courtyard""")
 
+r_path_housing = Room(title="Housing Path",
+description="""The path leading towards campus housing, passing 
+the Community Gardens and the Recreation Fields""")
 
+r_garden = Room(title="Community Gardens",
+description="""Community garden right off the path to campus housing making
+easy access to fresh vegetables and herbs""")
+
+r_rec_fields = Room(title="Recreation Fields",
+description="""Massive grass field used for extracurricular activities like soccer and
+football. """)
+
+r_housing_sqaure = Room(title="Campus Housing Square",
+description="""Square connecting all the Campus housing to the rest of campus""")
 
 
 #data building
@@ -296,6 +309,90 @@ description="""Leads to the back of the Admin Building""")
 
 
 
+#student housing building 
+
+r_housing_student = Room(title="Lambda Student Housing", 
+description="""This is the main part of the student housing building.""")
+
+r_housing_student_lounge = Room(title="Student Housing Lounge, 
+description="""Students come here to chill.""")
+
+r_housing_student_kitchen = Room(title="Student Housing Kitchen", 
+description="""Students try to make their own food here.""")
+
+r_housing_student_hall = Room(title="Student Housing Back Hall", 
+description="""Hall provides access to the different housing wings""")
+
+r_housing_student_alpha = Room(title="Student Housing Alpha Wing", 
+description="""How those living in the Alpha Wing of the Student Building 
+access their Quarters. You must be living here to go further.""")
+
+r_housing_student_beta = Room(title="Student Housing Beta Wing", 
+description="""How those living in the Beta Wing of the Student Building 
+access their Quarters. You must be living here to go further.""")
+
+r_housing_student_charlie = Room(title="Student Housing Charlie Wing", 
+description="""How those living in the Charlie Wing of the Student Building 
+access their Quarters. You must be living here to go further.""")
+
+
+
+#staff housing building 
+
+r_housing_staff = Room(title="Lambda Staff Housing", 
+description="""This is the main part of the staff housing building.""")
+
+r_housing_staff_lounge = Room(title="Staff Housing Lounge, 
+description="""Staff come here to chill.""")
+
+r_housing_staff_kitchen = Room(title="Staff Housing Kitchen", 
+description="""Staff make their own food here.""")
+
+r_housing_staff_hall = Room(title="Staff Housing Back Hall", 
+description="""Hall provides access to the different staff housing wings""")
+
+r_housing_staff_alpha = Room(title="Staff Housing Alpha Wing", 
+description="""How those living in the Alpha Wing of the Staff Building 
+access their Quarters. You must be living here to go further.""")
+
+r_housing_staff_beta = Room(title="Staff Housing Beta Wing", 
+description="""How those living in the Beta Wing of the Staff Building 
+access their Quarters. You must be living here to go further.""")
+
+r_housing_staff_charlie = Room(title="Staff Housing Charlie Wing", 
+description="""How those living in the Charlie Wing of the Staff Building 
+access their Quarters. You must be living here to go further.""")
+
+
+
+#admin housing building 
+
+r_housing_admin = Room(title="Lambda Administration Housing", 
+description="""This is the main part of the administration housing building.""")
+
+r_housing_admin_lounge = Room(title="Administration Housing Lounge, 
+description="""Administration come here to chill.""")
+
+r_housing_admin_kitchen = Room(title="Administration Housing Kitchen", 
+description="""Administration make their own food here.""")
+
+r_housing_admin_hall = Room(title="Administration Housing Back Hall", 
+description="""Hall provides access to the different administration housing wings""")
+
+r_housing_admin_alpha = Room(title="Administration Housing Alpha Wing", 
+description="""How those living in the Alpha Wing of the Administration Building 
+access their Quarters. You must be living here to go further.""")
+
+r_housing_admin_beta = Room(title="Administration Housing Beta Wing", 
+description="""How those living in the Beta Wing of the Administration Building 
+access their Quarters. You must be living here to go further.""")
+
+r_housing_admin_charlie = Room(title="Administration Housing Charlie Wing", 
+description="""How those living in the Charlie Wing of the Administration Building 
+access their Quarters. You must be living here to go further.""")
+
+
+
 #all saves below
 
 r_campus_welcome_center.save()
@@ -396,6 +493,39 @@ r_career_office_ds.save()
 r_career_hall.save()
 
 
+r_path_housing.save()
+r_garden.save()
+r_rec_fields.save()
+
+r_housing_square.save()
+r_housing_student.save()
+r_housing_staff.save()
+r_housing_admin.save()
+
+r_housing_student_lounge.save()
+r_housing_student_kitchen.save()
+r_housing_student_hall.save()
+r_housing_student_alpha.save()
+r_housing_student_beta.save()
+r_housing_student_charlie.save()
+
+r_housing_staff_lounge.save()
+r_housing_staff_kitchen.save()
+r_housing_staff_hall.save()
+r_housing_staff_alpha.save()
+r_housing_staff_beta.save()
+r_housing_staff_charlie.save()
+
+r_housing_admin_lounge.save()
+r_housing_admin_kitchen.save()
+r_housing_admin_hall.save()
+r_housing_admin_alpha.save()
+r_housing_admin_beta.save()
+r_housing_admin_charlie.save()
+
+
+
+
 
 
 
@@ -423,9 +553,32 @@ r_campus_courtyard_west.connectRooms(r_campus_courtyard_mid, "e")
 #connect buildings
 
 
-#south still had w available
+#south 
 r_campus_courtyard_south.connectRooms(r_student_center, "e")
 r_student_center.connectRooms(r_campus_courtyard_south, "w")
+
+
+#housing path
+r_campus_courtyard_south.connectRooms(r_path_housing, "w")
+r_path_housing.connectRooms(r_campus_courtyard_south, "e")
+
+r_path_housing.connectRooms(r_garden, "n")
+r_garden.connectRooms(r_path_housing, "s")
+
+r_path_housing.connectRooms(r_rec_fields, "s")
+r_rec_fields.connectRooms(r_path_housing, "n")
+
+r_path_housing.connectRooms(r_housing_sqaure, "w")
+r_housing_sqaure.connectRooms(r_path_housing, "e")
+
+r_housing_sqaure.connectRooms(r_housing_staff, "n")
+r_housing_staff.connectRooms(r_housing_sqaure, "s")
+
+r_housing_sqaure.connectRooms(r_housing_student, "w")
+r_housing_student.connectRooms(r_housing_sqaure, "e")
+
+r_housing_sqaure.connectRooms(r_housing_admin, "s")
+r_housing_admin.connectRooms(r_housing_sqaure, "n")
 
 
 #east
@@ -521,7 +674,11 @@ r_ios_u4.connectRooms(r_ios_hall, "n")
 
 #careers -- courtyard is e
 
+#housing admin
 
+#housing staff
+
+#housing students
 
 players=Player.objects.all()
 for p in players:
