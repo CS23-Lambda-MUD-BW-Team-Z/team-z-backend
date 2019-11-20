@@ -718,7 +718,7 @@ r_cs_building.connectRooms(r_cs_bw1_gal, "e")
 r_cs_bw1_gal.connectRooms(r_cs_building, "w")
 
 r_cs_building.connectRooms(r_cs_bw2_gal, "w")
-r_cs_bw1_gal.connectRooms(r_cs_building, "e")
+r_cs_bw2_gal.connectRooms(r_cs_building, "e")
 
 r_cs_building.connectRooms(r_cs_hall, "s")
 r_cs_hall.connectRooms(r_cs_building, "n")
@@ -857,14 +857,14 @@ r_housing_admin_kitchen.connectRooms(r_housing_admin, "s")
 r_housing_admin.connectRooms(r_housing_admin_lounge, "s")
 r_housing_admin_lounge.connectRooms(r_housing_admin, "n")
 
-r_housing_staff_hall.connectRooms(r_housing_staff_alpha, "n")
-r_housing_staff_alpha.connectRooms(r_housing_staff_hall, "s")
+r_housing_admin_hall.connectRooms(r_housing_admin_alpha, "n")
+r_housing_admin_alpha.connectRooms(r_housing_admin_hall, "s")
 
-r_housing_staff_hall.connectRooms(r_housing_staff_beta, "w")
-r_housing_staff_beta.connectRooms(r_housing_staff_hall, "e")
+r_housing_admin_hall.connectRooms(r_housing_admin_beta, "w")
+r_housing_admin_beta.connectRooms(r_housing_admin_hall, "e")
 
-r_housing_staff_hall.connectRooms(r_housing_staff_charlie, "s")
-r_housing_staff_charlie.connectRooms(r_housing_staff_hall, "n")
+r_housing_admin_hall.connectRooms(r_housing_admin_charlie, "s")
+r_housing_admin_charlie.connectRooms(r_housing_admin_hall, "n")
 
 
 
