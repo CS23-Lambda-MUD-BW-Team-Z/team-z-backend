@@ -12,7 +12,7 @@ from rest_framework import serializers, viewsets
 # instantiate pusher
 # pusher = Pusher(app_id=config('PUSHER_APP_ID'), key=config('PUSHER_KEY'), secret=config('PUSHER_SECRET'), cluster=config('PUSHER_CLUSTER'))
 
-class RoomSerializer(serializers.HyperlinkedModeSerializer):
+class RoomSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Room
         fields = ("id", "title", "description", "n_to", "s_to", "e_to", "w_to")
