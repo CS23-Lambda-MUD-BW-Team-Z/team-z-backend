@@ -6,7 +6,7 @@ Room.objects.all().delete()
 
 
 
-# main line
+# courtyards and such
 
 r_campus_welcome_center = Room(title="Lambda Welcome Center",
 description="""The Lambda School journey begins here""")
@@ -26,7 +26,20 @@ description="""The East end of Lambda's massive courtyard""")
 r_campus_courtyard_west = Room(title="Campus Courtyard West",
 description="""The West end of Lambda's massive courtyard""")
 
+r_path_housing = Room(title="Housing Path",
+description="""The path leading towards campus housing, passing 
+the Community Gardens and the Recreation Fields""")
 
+r_garden = Room(title="Community Gardens",
+description="""Community garden right off the path to campus housing making
+easy access to fresh vegetables and herbs""")
+
+r_rec_fields = Room(title="Recreation Fields",
+description="""Massive grass field used for extracurricular activities like soccer and
+football. """)
+
+r_housing_sqaure = Room(title="Campus Housing Square",
+description="""Square connecting all the Campus housing to the rest of campus""")
 
 
 #data building
@@ -83,7 +96,7 @@ the higher level classes are held""")
 
 #android building
 
-r_android_building = Room(title="Android Development Department Main Building Ruins", 
+r_and_building = Room(title="Android Development Department Main Building Ruins", 
 description="""Here students used to come to learn about the wonders of Android Developmet before 
 it was destroyed in a fire.""")
 
@@ -296,6 +309,90 @@ description="""Leads to the back of the Admin Building""")
 
 
 
+#student housing building 
+
+r_housing_student = Room(title="Lambda Student Housing", 
+description="""This is the main part of the student housing building.""")
+
+r_housing_student_lounge = Room(title="Student Housing Lounge, 
+description="""Students come here to chill.""")
+
+r_housing_student_kitchen = Room(title="Student Housing Kitchen", 
+description="""Students try to make their own food here.""")
+
+r_housing_student_hall = Room(title="Student Housing Back Hall", 
+description="""Hall provides access to the different housing wings""")
+
+r_housing_student_alpha = Room(title="Student Housing Alpha Wing", 
+description="""How those living in the Alpha Wing of the Student Building 
+access their Quarters. You must be living here to go further.""")
+
+r_housing_student_beta = Room(title="Student Housing Beta Wing", 
+description="""How those living in the Beta Wing of the Student Building 
+access their Quarters. You must be living here to go further.""")
+
+r_housing_student_charlie = Room(title="Student Housing Charlie Wing", 
+description="""How those living in the Charlie Wing of the Student Building 
+access their Quarters. You must be living here to go further.""")
+
+
+
+#staff housing building 
+
+r_housing_staff = Room(title="Lambda Staff Housing", 
+description="""This is the main part of the staff housing building.""")
+
+r_housing_staff_lounge = Room(title="Staff Housing Lounge, 
+description="""Staff come here to chill.""")
+
+r_housing_staff_kitchen = Room(title="Staff Housing Kitchen", 
+description="""Staff make their own food here.""")
+
+r_housing_staff_hall = Room(title="Staff Housing Back Hall", 
+description="""Hall provides access to the different staff housing wings""")
+
+r_housing_staff_alpha = Room(title="Staff Housing Alpha Wing", 
+description="""How those living in the Alpha Wing of the Staff Building 
+access their Quarters. You must be living here to go further.""")
+
+r_housing_staff_beta = Room(title="Staff Housing Beta Wing", 
+description="""How those living in the Beta Wing of the Staff Building 
+access their Quarters. You must be living here to go further.""")
+
+r_housing_staff_charlie = Room(title="Staff Housing Charlie Wing", 
+description="""How those living in the Charlie Wing of the Staff Building 
+access their Quarters. You must be living here to go further.""")
+
+
+
+#admin housing building 
+
+r_housing_admin = Room(title="Lambda Administration Housing", 
+description="""This is the main part of the administration housing building.""")
+
+r_housing_admin_lounge = Room(title="Administration Housing Lounge, 
+description="""Administration come here to chill.""")
+
+r_housing_admin_kitchen = Room(title="Administration Housing Kitchen", 
+description="""Administration make their own food here.""")
+
+r_housing_admin_hall = Room(title="Administration Housing Back Hall", 
+description="""Hall provides access to the different administration housing wings""")
+
+r_housing_admin_alpha = Room(title="Administration Housing Alpha Wing", 
+description="""How those living in the Alpha Wing of the Administration Building 
+access their Quarters. You must be living here to go further.""")
+
+r_housing_admin_beta = Room(title="Administration Housing Beta Wing", 
+description="""How those living in the Beta Wing of the Administration Building 
+access their Quarters. You must be living here to go further.""")
+
+r_housing_admin_charlie = Room(title="Administration Housing Charlie Wing", 
+description="""How those living in the Charlie Wing of the Administration Building 
+access their Quarters. You must be living here to go further.""")
+
+
+
 #all saves below
 
 r_campus_welcome_center.save()
@@ -324,7 +421,7 @@ r_web_u4.save()
 r_web_hall.save()
 
 
-r_android_building.save()
+r_and_building.save()
 r_and_help.save()
 r_and_u1.save()
 r_and_u2.save()
@@ -396,6 +493,39 @@ r_career_office_ds.save()
 r_career_hall.save()
 
 
+r_path_housing.save()
+r_garden.save()
+r_rec_fields.save()
+
+r_housing_square.save()
+r_housing_student.save()
+r_housing_staff.save()
+r_housing_admin.save()
+
+r_housing_student_lounge.save()
+r_housing_student_kitchen.save()
+r_housing_student_hall.save()
+r_housing_student_alpha.save()
+r_housing_student_beta.save()
+r_housing_student_charlie.save()
+
+r_housing_staff_lounge.save()
+r_housing_staff_kitchen.save()
+r_housing_staff_hall.save()
+r_housing_staff_alpha.save()
+r_housing_staff_beta.save()
+r_housing_staff_charlie.save()
+
+r_housing_admin_lounge.save()
+r_housing_admin_kitchen.save()
+r_housing_admin_hall.save()
+r_housing_admin_alpha.save()
+r_housing_admin_beta.save()
+r_housing_admin_charlie.save()
+
+
+
+
 
 
 
@@ -423,9 +553,32 @@ r_campus_courtyard_west.connectRooms(r_campus_courtyard_mid, "e")
 #connect buildings
 
 
-#south still had w available
+#south 
 r_campus_courtyard_south.connectRooms(r_student_center, "e")
 r_student_center.connectRooms(r_campus_courtyard_south, "w")
+
+
+#housing path
+r_campus_courtyard_south.connectRooms(r_path_housing, "w")
+r_path_housing.connectRooms(r_campus_courtyard_south, "e")
+
+r_path_housing.connectRooms(r_garden, "n")
+r_garden.connectRooms(r_path_housing, "s")
+
+r_path_housing.connectRooms(r_rec_fields, "s")
+r_rec_fields.connectRooms(r_path_housing, "n")
+
+r_path_housing.connectRooms(r_housing_sqaure, "w")
+r_housing_sqaure.connectRooms(r_path_housing, "e")
+
+r_housing_sqaure.connectRooms(r_housing_staff, "n")
+r_housing_staff.connectRooms(r_housing_sqaure, "s")
+
+r_housing_sqaure.connectRooms(r_housing_student, "s")
+r_housing_student.connectRooms(r_housing_sqaure, "n")
+
+r_housing_sqaure.connectRooms(r_housing_admin, "w")
+r_housing_admin.connectRooms(r_housing_sqaure, "e")
 
 
 #east
@@ -435,8 +588,8 @@ r_ios_building.connectRooms(r_campus_courtyard_east, "w")
 r_campus_courtyard_east.connectRooms(r_web_building, "n")
 r_web_building.connectRooms(r_campus_courtyard_east, "s")
 
-r_campus_courtyard_east.connectRooms(r_android_building, "s")
-r_android_building.connectRooms(r_campus_courtyard_east, "n")
+r_campus_courtyard_east.connectRooms(r_and_building, "s")
+r_and_building.connectRooms(r_campus_courtyard_east, "n")
 
 
 #west
@@ -502,24 +655,218 @@ r_ios_hall.connectRooms(r_ios_u4, "s")
 r_ios_u4.connectRooms(r_ios_hall, "n")
 
 #web -- courtyard is s
+r_web_building.connectRooms(r_web_help, "e")
+r_web_help.connectRooms(r_web_building, "w")
+
+r_web_building.connectRooms(r_web_u1, "w")
+r_web_u1.connectRooms(r_web_building, "e")
+
+r_web_building.connectRooms(r_web_hall, "n")
+r_web_hall.connectRooms(r_web_building, "s")
+
+r_web_hall.connectRooms(r_web_u2, "e")
+r_web_u2.connectRooms(r_web_hall, "w")
+
+r_web_hall.connectRooms(r_web_u3, "w")
+r_web_u3.connectRooms(r_web_hall, "e")
+
+r_web_hall.connectRooms(r_web_u4, "n")
+r_web_u4.connectRooms(r_web_hall, "s")
 
 #android -- courtyard is n
+r_and_building.connectRooms(r_and_help, "e")
+r_and_help.connectRooms(r_and_building, "w")
 
+r_and_building.connectRooms(r_and_u1, "w")
+r_and_u1.connectRooms(r_and_building, "e")
+
+r_and_building.connectRooms(r_and_hall, "s")
+r_and_hall.connectRooms(r_and_building, "n")
+
+r_and_hall.connectRooms(r_and_u2, "e")
+r_and_u2.connectRooms(r_and_hall, "w")
+
+r_and_hall.connectRooms(r_and_u3, "w")
+r_and_u3.connectRooms(r_and_hall, "e")
+
+r_and_hall.connectRooms(r_and_u4, "s")
+r_and_u4.connectRooms(r_and_hall, "n")
 
 #west
 #ds -- courtyard is s
+r_ds_building.connectRooms(r_ds_help, "e")
+r_ds_help.connectRooms(r_ds_building, "w")
+
+r_ds_building.connectRooms(r_ds_u1, "w")
+r_ds_u1.connectRooms(r_ds_building, "e")
+
+r_ds_building.connectRooms(r_ds_hall, "n")
+r_ds_hall.connectRooms(r_ds_building, "s")
+
+r_ds_hall.connectRooms(r_ds_u2, "e")
+r_ds_u2.connectRooms(r_ds_hall, "w")
+
+r_ds_hall.connectRooms(r_ds_u3, "w")
+r_ds_u3.connectRooms(r_ds_hall, "e")
+
+r_ds_hall.connectRooms(r_ds_u4, "n")
+r_ds_u4.connectRooms(r_ds_hall, "s")
+
 
 #cs -- courtyard is n
+r_cs_building.connectRooms(r_cs_bw1_gal, "e")
+r_cs_bw1_gal.connectRooms(r_cs_building, "w")
+
+r_cs_building.connectRooms(r_cs_bw2_gal, "w")
+r_cs_bw1_gal.connectRooms(r_cs_building, "e")
+
+r_cs_building.connectRooms(r_cs_hall, "s")
+r_cs_hall.connectRooms(r_cs_building, "n")
+
+r_cs_hall.connectRooms(r_cs_u2, "e")
+r_cs_u2.connectRooms(r_cs_hall, "w")
+
+r_cs_hall.connectRooms(r_cs_u1, "w")
+r_cs_u1.connectRooms(r_cs_hall, "e")
+
+r_cs_hall.connectRooms(r_cs_help, "s")
+r_cs_help.connectRooms(r_cs_hall, "n")
 
 #ux -- courtyard is e
+r_ux_building.connectRooms(r_ux_hall, "w")
+r_ux_hall.connectRooms(r_ux_building, "e")
 
+r_ux_building.connectRooms(r_ux_help, "s")
+r_ux_help.connectRooms(r_ux_building, "n")
+
+r_ux_building.connectRooms(r_ux_u1, "n")
+r_ux_u1.connectRooms(r_ux_building, "s")
+
+r_ux_hall.connectRooms(r_ux_u2, "n")
+r_ux_u2.connectRooms(r_ux_hall, "s")
+
+r_ux_hall.connectRooms(r_ux_u3, "w")
+r_ux_u3.connectRooms(r_ux_hall, "e")
+
+r_ux_hall.connectRooms(r_ux_u4, "s")
+r_ux_u4.connectRooms(r_ux_hall, "n")
 
 #north
 #admin -- courtyard is s
+r_admin.connectRooms(r_tl_lounge, "e")
+r_tl_lounge.connectRooms(r_admin, "w")
+
+r_admin.connectRooms(r_teacher_lounge, "w")
+r_teacher_lounge.connectRooms(r_admin, "e")
+
+r_admin.connectRooms(r_admin_hall, "n")
+r_admin_hall.connectRooms(r_admin, "s")
+
+r_admin_hall.connectRooms(r_office1, "n")
+r_office1.connectRooms(r_admin_hall, "s")
+
+r_admin_hall.connectRooms(r_office2, "w")
+r_office2.connectRooms(r_admin_hall, "e")
+
+r_admin_hall.connectRooms(r_office3, "e")
+r_office3.connectRooms(r_admin_hall, "w")
 
 #labs -- courtyard is w
+r_labs_building.connectRooms(r_labs_help, "n")
+r_labs_help.connectRooms(r_labs_building, "s")
+
+r_labs_building.connectRooms(r_labs_team_room, "s")
+r_labs_team_room.connectRooms(r_labs_building, "n")
+
+r_labs_building.connectRooms(r_labs_hall, "e")
+r_labs_hall.connectRooms(r_labs_building, "w")
+
+r_labs_hall.connectRooms(r_labs_ds_display, "e")
+r_labs_ds_display.connectRooms(r_labs_hall, "w")
+
+r_labs_hall.connectRooms(r_labs_mobile_display, "n")
+r_labs_mobile_display.connectRooms(r_labs_hall, "s")
+
+r_labs_hall.connectRooms(r_labs_web_display, "s")
+r_labs_web_display.connectRooms(r_labs_hall, "n")
 
 #careers -- courtyard is e
+r_career_building.connectRooms(r_career_hall, "w")
+r_career_hall.connectRooms(r_career_building, "e")
+
+r_career_building.connectRooms(r_career_help, "n")
+r_career_help.connectRooms(r_career_building, "s")
+
+r_career_building.connectRooms(r_career_office_ux, "s")
+r_career_office_ux.connectRooms(r_career_building, "n")
+
+r_career_hall.connectRooms(r_career_office_ds, "w")
+r_career_office_ds.connectRooms(r_career_hall, "e")
+
+r_career_hall.connectRooms(r_career_office_ios, "n")
+r_career_office_ios.connectRooms(r_career_hall, "s")
+
+r_career_hall.connectRooms(r_career_office_web, "s")
+r_career_office_web.connectRooms(r_career_hall, "n")
+
+#housing student courtyard is n
+r_housing_student.connectRooms(r_housing_student_hall, "s")
+r_housing_student_hall.connectRooms(r_housing_student, "n")
+
+r_housing_student.connectRooms(r_housing_student_kitchen, "e")
+r_housing_student_kitchen.connectRooms(r_housing_student, "w")
+
+r_housing_student.connectRooms(r_housing_student_lounge, "w")
+r_housing_student_lounge.connectRooms(r_housing_student, "e")
+
+r_housing_student_hall.connectRooms(r_housing_student_alpha, "e")
+r_housing_student_alpha.connectRooms(r_housing_student_hall, "w")
+
+r_housing_student_hall.connectRooms(r_housing_student_beta, "w")
+r_housing_student_beta.connectRooms(r_housing_student_hall, "e")
+
+r_housing_student_hall.connectRooms(r_housing_student_charlie, "s")
+r_housing_student_charlie.connectRooms(r_housing_student_hall, "n")
+
+#housing staff courtyard is south
+r_housing_staff.connectRooms(r_housing_staff_hall, "n")
+r_housing_staff_hall.connectRooms(r_housing_staff, "s")
+
+r_housing_staff.connectRooms(r_housing_staff_kitchen, "e")
+r_housing_staff_kitchen.connectRooms(r_housing_staff, "w")
+
+r_housing_staff.connectRooms(r_housing_staff_lounge, "w")
+r_housing_staff_lounge.connectRooms(r_housing_staff, "e")
+
+r_housing_staff_hall.connectRooms(r_housing_staff_alpha, "e")
+r_housing_staff_alpha.connectRooms(r_housing_staff_hall, "w")
+
+r_housing_staff_hall.connectRooms(r_housing_staff_beta, "w")
+r_housing_staff_beta.connectRooms(r_housing_staff_hall, "e")
+
+r_housing_staff_hall.connectRooms(r_housing_staff_charlie, "n")
+r_housing_staff_charlie.connectRooms(r_housing_staff_hall, "s")
+
+#housing admin courtyard is east
+r_housing_admin.connectRooms(r_housing_admin_hall, "w")
+r_housing_admin_hall.connectRooms(r_housing_admin, "e")
+
+r_housing_admin.connectRooms(r_housing_admin_kitchen, "n")
+r_housing_admin_kitchen.connectRooms(r_housing_admin, "s")
+
+r_housing_admin.connectRooms(r_housing_admin_lounge, "s")
+r_housing_admin_lounge.connectRooms(r_housing_admin, "n")
+
+r_housing_staff_hall.connectRooms(r_housing_staff_alpha, "n")
+r_housing_staff_alpha.connectRooms(r_housing_staff_hall, "s")
+
+r_housing_staff_hall.connectRooms(r_housing_staff_beta, "w")
+r_housing_staff_beta.connectRooms(r_housing_staff_hall, "e")
+
+r_housing_staff_hall.connectRooms(r_housing_staff_charlie, "s")
+r_housing_staff_charlie.connectRooms(r_housing_staff_hall, "n")
+
+
 
 
 
