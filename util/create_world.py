@@ -38,7 +38,7 @@ r_rec_fields = Room(title="Recreation Fields",
 description="""Massive grass field used for extracurricular activities like soccer and
 football. """)
 
-r_housing_sqaure = Room(title="Campus Housing Square",
+r_housing_square = Room(title="Campus Housing Square",
 description="""Square connecting all the Campus housing to the rest of campus""")
 
 
@@ -314,7 +314,7 @@ description="""Leads to the back of the Admin Building""")
 r_housing_student = Room(title="Lambda Student Housing", 
 description="""This is the main part of the student housing building.""")
 
-r_housing_student_lounge = Room(title="Student Housing Lounge, 
+r_housing_student_lounge = Room(title="Student Housing Lounge", 
 description="""Students come here to chill.""")
 
 r_housing_student_kitchen = Room(title="Student Housing Kitchen", 
@@ -342,7 +342,7 @@ access their Quarters. You must be living here to go further.""")
 r_housing_staff = Room(title="Lambda Staff Housing", 
 description="""This is the main part of the staff housing building.""")
 
-r_housing_staff_lounge = Room(title="Staff Housing Lounge, 
+r_housing_staff_lounge = Room(title="Staff Housing Lounge", 
 description="""Staff come here to chill.""")
 
 r_housing_staff_kitchen = Room(title="Staff Housing Kitchen", 
@@ -370,7 +370,7 @@ access their Quarters. You must be living here to go further.""")
 r_housing_admin = Room(title="Lambda Administration Housing", 
 description="""This is the main part of the administration housing building.""")
 
-r_housing_admin_lounge = Room(title="Administration Housing Lounge, 
+r_housing_admin_lounge = Room(title="Administration Housing Lounge", 
 description="""Administration come here to chill.""")
 
 r_housing_admin_kitchen = Room(title="Administration Housing Kitchen", 
@@ -568,17 +568,17 @@ r_garden.connectRooms(r_path_housing, "s")
 r_path_housing.connectRooms(r_rec_fields, "s")
 r_rec_fields.connectRooms(r_path_housing, "n")
 
-r_path_housing.connectRooms(r_housing_sqaure, "w")
-r_housing_sqaure.connectRooms(r_path_housing, "e")
+r_path_housing.connectRooms(r_housing_square, "w")
+r_housing_square.connectRooms(r_path_housing, "e")
 
-r_housing_sqaure.connectRooms(r_housing_staff, "n")
-r_housing_staff.connectRooms(r_housing_sqaure, "s")
+r_housing_square.connectRooms(r_housing_staff, "n")
+r_housing_staff.connectRooms(r_housing_square, "s")
 
-r_housing_sqaure.connectRooms(r_housing_student, "s")
-r_housing_student.connectRooms(r_housing_sqaure, "n")
+r_housing_square.connectRooms(r_housing_student, "s")
+r_housing_student.connectRooms(r_housing_square, "n")
 
-r_housing_sqaure.connectRooms(r_housing_admin, "w")
-r_housing_admin.connectRooms(r_housing_sqaure, "e")
+r_housing_square.connectRooms(r_housing_admin, "w")
+r_housing_admin.connectRooms(r_housing_square, "e")
 
 
 #east
