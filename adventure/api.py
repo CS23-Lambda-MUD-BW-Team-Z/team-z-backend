@@ -11,6 +11,15 @@ import json
 # instantiate pusher
 # pusher = Pusher(app_id=config('PUSHER_APP_ID'), key=config('PUSHER_KEY'), secret=config('PUSHER_SECRET'), cluster=config('PUSHER_CLUSTER'))
 
+class RoomSerializer(serializer.HyperlinkedModeSerializer):
+    class Meta:
+        model = Room
+        fields = ("id", "title", "description", "n_to", "s_to", "e_to", "w_to")
+
+class RoomViewSet(viewsets.ModelViewSet):
+    serializer_class = RoomSerializer
+    queryset = Room.objects.all()
+
 @csrf_exempt
 @api_view(["GET"])
 def initialize(request):
