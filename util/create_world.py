@@ -304,8 +304,8 @@ description="""Student's come here for IOS related career questions.""")
 r_career_office_ds = Room(title="Data Science Career Office", 
 description="""Student's come here for Data Science related career questions.""")
 
-r_career_hall = Room(title="Administration Building Back Hallway", 
-description="""Leads to the back of the Admin Building""")
+r_career_hall = Room(title="Career Building Back Hallway", 
+description="""Leads to the back of the Career Building""")
 
 
 
